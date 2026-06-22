@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %}
+Route Recalculation
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- Header -->
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2 class="fw-bold">Here's what we discovered</h2>
+            <p class="text-secondary mb-0">
+                We analyzed your situation and mapped the best possible routes.
+            </p>
+            <div class="col-md-6">
+                <div class="summary-card">
+                    <h6><i class="bi bi-file-text me-2 text-primary"></i>
+                        Your Situation</h6>
+                    <p>{{ data.user_input }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <a href="/" class="btn btn-outline-primary me-2">
+                ← Back
+            </a>
+
+            <a href="/" class="btn btn-primary">
+                New Search
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Summary Cards -->
+
+    <div class="row g-3 mb-5">
+
+        <div class="col-md-3">
+            <div class="summary-card">
+                <h6><i class="bi bi-bullseye me-2 text-danger"></i>Goal Detected</h6>
+                <p>{{ data.goal }}</p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="summary-card">
+                <h6><i class="bi bi-signpost-split me-2 text-primary"></i>Original Route</h6>
+                <p>{{ data.original_route }}</p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="summary-card warning">
+                <h6><i class="bi bi-exclamation-triangle me-2 text-warning"></i>Route Status</h6>
+                <p>{{ data.route_status }}</p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="summary-card success">
+                <h6><i class="bi bi-shield-check me-2 text-success"></i>Confidence</h6>
+                <p>High</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Alternative Routes -->
+
+    <h3 class="mb-4">
+        Top Alternative Routes For You
+    </h3>
+
+    <!-- Route A -->
+
+    <div class="route-card green mb-3">
+
+        <div>
+            <h4>{{ data.route1_title }}</h4>
+
+            <p>{{ data.route1_desc }}</p>
+        </div>
+
+        <div>
+            <span class="badge bg-success">
+                Very High Alignment
+            </span>
+        </div>
+
+    </div>
+
+    <!-- Route B -->
+
+    <div class="route-card purple mb-3">
+
+        <div>
+            <h4>{{ data.route2_title }}</h4>
+
+            <p>{{ data.route2_desc }}</p>
+        </div>
+
+        <div>
+            <span class="badge bg-primary">
+                High Alignment
+            </span>
+        </div>
+
+    </div>
+
+    <!-- Route C -->
+
+    <div class="route-card orange mb-3">
+
+        <div>
+            <h4>{{ data.route3_title }}</h4>
+
+            <p>{{ data.route3_desc }}</p>
+        </div>
+
+        <div>
+            <span class="badge bg-warning text-dark">
+                Medium Alignment
+            </span>
+        </div>
+
+    </div>
+
+    <!-- Route D -->
+
+    <div class="route-card blue mb-4">
+
+        <div>
+            <h4>{{ data.route4_title }}</h4>
+
+            <p>{{ data.route4_desc }}</p>
+        </div>
+
+        <div>
+            <span class="badge bg-info">
+                Medium Alignment
+            </span>
+        </div>
+
+    </div>
+
+    <div class="text-center">
+
+        <a href="/guidance" class="btn btn-lg btn-primary">
+            Continue →
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

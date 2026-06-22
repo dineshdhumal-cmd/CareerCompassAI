@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block title %}
+Career Compass AI
+{% endblock %}
+
+{% block content %}
+
+<section class="hero-section">
+
+<div class="container py-5">
+
+    <div class="row align-items-center g-5">
+
+        <!-- LEFT SIDE -->
+
+        <div class="col-lg-6">
+
+            <h1 class="hero-title">
+                Every setback is a setup for a
+                <span class="hero-highlight">
+                    better comeback.
+                </span>
+            </h1>
+
+            <p class="hero-description mt-4">
+                Career Compass AI helps students discover alternative routes
+                when their original career plans don't go as expected.
+            </p>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="col-lg-6">
+
+            <div class="main-card">
+
+                <h2 class="mb-4">
+                    Tell us your situation
+                </h2>
+
+                <form id="careerForm" action="/analyze" method="POST">
+
+                    <textarea
+                        name="user_input"
+                        class="form-control mb-4"
+                        rows="8"
+                        placeholder="I scored 468 marks in NEET 2026. My dream was MBBS and eventually opening my own clinic."
+                        required></textarea>
+
+                    <div class="mb-4">
+
+                        <span class="suggestion-chip">Exam & Score</span>
+                        <span class="suggestion-chip">Dream Goal</span>
+                        <span class="suggestion-chip">Interests</span>
+                        <span class="suggestion-chip">Constraints</span>
+                        <span class="suggestion-chip">Challenges</span>
+
+                    </div>
+
+                    <button type="submit" class="custom-btn">
+                        Recalculate Route
+                    </button>
+
+                </form>
+
+                <p class="text-center text-secondary mt-4 mb-0 small">
+                    🔒 Your data is private and secure.
+                    We don't store personal information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- TRUST SECTION -->
+
+    <div class="trust-card mt-5">
+
+        <div class="row text-center">
+
+            <div class="col-md-3">
+                🤖
+                <h6 class="mt-2">AI Powered</h6>
+            </div>
+
+            <div class="col-md-3">
+                🧭
+                <h6 class="mt-2">Multiple Routes</h6>
+            </div>
+
+            <div class="col-md-3">
+                ❤️
+                <h6 class="mt-2">Guidance</h6>
+            </div>
+
+            <div class="col-md-3">
+                🔒
+                <h6 class="mt-2">Privacy</h6>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- Loading Overlay -->
+
+<div id="loadingOverlay" class="loading-overlay">
+
+    <div class="loading-box">
+
+        <div class="spinner"></div>
+
+        <h2>🧭 Analyzing Your Journey</h2>
+
+        <p id="loadingText">
+            Understanding your goals...
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+const loadingMessages = [
+    "Understanding your goals...",
+    "Evaluating your current route...",
+    "Finding alternative pathways...",
+    "Generating personalized guidance..."
+];
+
+document
+.getElementById("careerForm")
+.addEventListener("submit", function() {
+
+    document
+    .getElementById("loadingOverlay")
+    .style.display = "flex";
+
+    let i = 0;
+
+    setInterval(() => {
+
+        i++;
+
+        if(i < loadingMessages.length){
+
+            document.getElementById(
+                "loadingText"
+            ).innerText = loadingMessages[i];
+
+        }
+
+    }, 2000);
+
+});
+
+document
+.getElementById("careerForm")
+.querySelector("textarea")
+.addEventListener("keydown", function(e){
+
+    if(e.key === "Enter" && !e.shiftKey){
+
+        e.preventDefault();
+
+        document
+    .getElementById("careerForm")
+    .requestSubmit();
+
+    }
+
+});
+
+</script>
+
+{% endblock %}

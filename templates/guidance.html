@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+
+{% block title %}
+Perspective & Guidance
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- Top Bar -->
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2 class="fw-bold">Perspective & Guidance</h2>
+            <p class="text-secondary mb-0">
+                AI provides perspective, motivation and next steps.
+            </p>
+        </div>
+
+        <div>
+            <a href="/routes" class="btn btn-outline-primary me-2">
+                ← Back
+            </a>
+
+            <a href="/" class="btn btn-primary">
+                New Search
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Hero Card -->
+
+    <div class="guidance-hero-card mb-4">
+
+        <div class="d-flex align-items-center">
+
+            <div class="quote-icon me-3">
+                💬
+            </div>
+
+            <div>
+                <h2 class="mb-1">
+                    Your Journey Isn't Over
+                </h2>
+
+                <p class="mb-0 text-secondary">
+                    This is not the end. It's a redirection.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- AI Summary Section -->
+
+    <div class="row g-4 mb-5">
+
+        <div class="col-md-4">
+
+            <div class="summary-card">
+
+                <h6>🎯 Goal Detected</h6>
+
+                <p class="mb-0">
+                    {{ data.goal }}
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="summary-card">
+
+                <h6>🛣 Original Route</h6>
+
+                <p class="mb-0">
+                    {{ data.original_route }}
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="summary-card">
+
+                <h6>⚠ Route Status</h6>
+
+                <p class="mb-0">
+                    {{ data.route_status }}
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- AI Perspective -->
+
+    <div class="guidance-card mb-5">
+
+        <h3 class="mb-4">
+            AI Perspective
+        </h3>
+
+        <div class="perspective-box">
+
+            <p class="mb-0">
+                {{ data.perspective }}
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Key Takeaways -->
+
+    <h4 class="mb-3">
+        Key Takeaways
+    </h4>
+
+    <div class="row g-4 mb-5">
+
+        <div class="col-md-3">
+
+            <div class="takeaway-card">
+
+                🌱
+
+                <h6 class="mt-3">
+                    One result does not define your future.
+                </h6>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="takeaway-card">
+
+                🗺️
+
+                <h6 class="mt-3">
+                    Every destination has multiple routes.
+                </h6>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="takeaway-card">
+
+                🎯
+
+                <h6 class="mt-3">
+                    Your next decision matters more than your last result.
+                </h6>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="takeaway-card">
+
+                ⛰️
+
+                <h6 class="mt-3">
+                    Consistency today creates freedom tomorrow.
+                </h6>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Recommended Next Steps -->
+
+    <h4 class="mb-3">
+        Recommended Next Steps
+    </h4>
+
+    <div class="row g-4 mb-5">
+
+        <div class="col-md-4">
+
+            <div class="next-step-card">
+
+                <h5>
+                    Explore Routes
+                </h5>
+
+                <p>
+                    Compare every route and understand your options.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="next-step-card">
+
+                <h5>
+                    Make a Plan
+                </h5>
+
+                <p>
+                    Break your goal into weekly actions and milestones.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="next-step-card">
+
+                <h5>
+                    Talk to Mentors
+                </h5>
+
+                <p>
+                    Discuss options with teachers, mentors and professionals.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Support Section -->
+
+    <div class="support-card">
+
+        <h4>
+            You're Not Alone.
+        </h4>
+
+        <p class="text-secondary">
+            If you're feeling overwhelmed, talk to someone you trust.
+        </p>
+
+        <div class="row text-center mt-4">
+
+            <div class="col">
+                ❤️<br>Parents
+            </div>
+
+            <div class="col">
+                🎓<br>Teachers
+            </div>
+
+            <div class="col">
+                🧑‍🏫<br>Mentors
+            </div>
+
+            <div class="col">
+                💬<br>Counselors
+            </div>
+
+            <div class="col">
+                📞<br>Helplines
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
