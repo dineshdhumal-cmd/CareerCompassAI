@@ -7,13 +7,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 print("KEY EXISTS:", bool(os.getenv("GEMINI_API_KEY")))
-print("KEY PREFIX:", os.getenv("GEMINI_API_KEY")[:8])
+print("KEY STARTS WITH:", os.getenv("GEMINI_API_KEY")[:8])
 genai.configure(
     api_key=os.getenv("GEMINI_API_KEY")
 )
 
 model = genai.GenerativeModel(
-    "gemini-2.5-flash"
+    "gemini-2-flash"
 )
 
 
