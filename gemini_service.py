@@ -6,6 +6,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+print(
+    "KEY PREFIX:",
+    os.getenv("GEMINI_API_KEY")[:8]
+)
+
 genai.configure(
     api_key=os.getenv("GEMINI_API_KEY")
 )
